@@ -33,9 +33,7 @@ jobs:
             ${{ runner.os }}-gradle-
 
       - name: Build with Gradle
-        run: | 
-#          ./gradlew clean build
-          ./gradlew bootJar
+        run: ./gradlew bootJar
 
       - name: Docker build & push to prod
         run: |
