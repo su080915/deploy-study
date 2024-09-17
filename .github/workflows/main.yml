@@ -32,6 +32,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
+      - name: Gradle clean build
+        run: ./gradlew clean build
+
       - name: Build with Gradle
         run: ./gradlew bootJar
 
