@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class DeployController {
     private final DeployService deployService;
 
-    @GetMapping
-    public String index() {
+    @GetMapping("/here")
+    public void index() {
         deployService.save();
-        return "Deploy!";
     }
 }

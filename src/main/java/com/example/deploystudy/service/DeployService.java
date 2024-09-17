@@ -2,6 +2,7 @@ package com.example.deploystudy.service;
 
 
 import com.example.deploystudy.repository.DeployRepository;
+import com.example.deploystudy.repository.Message;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ public class DeployService {
     private final DeployRepository deployRepository;
 
     public void save() {
-        deployRepository.save("ok");
-        System.out.println("ok");
+        Message message = new Message();
+        deployRepository.save(message);
     }
 }
