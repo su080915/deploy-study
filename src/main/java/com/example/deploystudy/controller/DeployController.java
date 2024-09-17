@@ -3,7 +3,6 @@ package com.example.deploystudy.controller;
 
 import com.example.deploystudy.service.DeployService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +12,7 @@ public class DeployController {
     private final DeployService deployService;
 
     @PostMapping("/here")
-    public void index() {
+    public void creat() {
         deployService.save();
     }
 }
