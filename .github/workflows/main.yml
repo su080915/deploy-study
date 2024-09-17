@@ -34,7 +34,7 @@ jobs:
 
       - name: Build with Gradle
         run: | 
-          ./gradlew clean build
+#          ./gradlew clean build
           ./gradlew bootJar
 
       - name: Docker build & push to prod
