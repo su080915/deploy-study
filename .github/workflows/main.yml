@@ -22,18 +22,20 @@ jobs:
       - name: set chmod
         run: chmod +x ./gradlew
 
-      - name: Gradle Caching # 속도 최적화
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
+#      - name: Gradle Caching # 속도 최적화
+#        uses: actions/cache@v4
+#        with:
+#          path: |
+#            ~/.gradle/caches
+#            ~/.gradle/wrapper
+#          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+#          restore-keys: |
+#            ${{ runner.os }}-gradle-
 
       - name: Build with Gradle
-        run: ./gradlew bootJar
+        run: | 
+          ./gradlew clean build
+          ./gradlew bootJar
 
       - name: Docker build & push to prod
         run: |
