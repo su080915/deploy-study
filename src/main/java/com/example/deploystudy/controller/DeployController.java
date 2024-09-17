@@ -13,6 +13,7 @@ public class DeployController {
 
     @PostMapping("/here")
     public void creat() {
+        System.out.println("ok");
         deployService.save();
     }
 }
