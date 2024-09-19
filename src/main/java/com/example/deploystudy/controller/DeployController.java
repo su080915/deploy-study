@@ -16,4 +16,10 @@ public class DeployController {
         System.out.println("ok");
         deployService.save();
     }
+
+    @PostMapping("/here2")
+    public void creat2() {
+        System.out.println("ok");
+        deployService.save();
+    }
 }
