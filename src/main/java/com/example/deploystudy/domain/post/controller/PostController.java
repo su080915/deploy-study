@@ -3,7 +3,9 @@ package com.example.deploystudy.domain.post.controller;
 
 import com.example.deploystudy.domain.post.domain.Post;
 import com.example.deploystudy.domain.post.dto.request.PostCreateRequest;
+import com.example.deploystudy.domain.post.dto.response.PostResponse;
 import com.example.deploystudy.domain.post.service.PostService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@Tag(name = "게시글")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/post")
@@ -26,7 +29,7 @@ public class PostController {
     }
 
     @GetMapping("/{postId}")
-    public Post getPost(@PathVariable Long postId) {
+    public PostResponse getPost(@PathVariable Long postId) {
         return postService.getPost(postId);
     }
 
@@ -34,5 +37,4 @@ public class PostController {
     public void createPost(@RequestBody PostCreateRequest request) {
         postService.createPost(request);
     }
-
 }
