@@ -1,4 +1,4 @@
-package com.example.deploystudy.repository;
+package com.example.deploystudy.domain.post.domain;
 
 
 import jakarta.persistence.Entity;
@@ -11,9 +11,15 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @NoArgsConstructor
 @SuperBuilder
-@Table(name = "message")
-public class Message {
+@Table(name = "posts")
+public class Post {
     @Id
     @GeneratedValue
     private Long id;
+
+    private String title;
+
+    private String content;
+
+    private String author;
 }
