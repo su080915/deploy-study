@@ -14,7 +14,6 @@ spring:
     password: ${DB_PW}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-
 springdoc:
   api-docs:
     enabled: true
@@ -27,11 +26,11 @@ springdoc:
     path: /swagger-ui.html
 
 redis:
-  host: 13.209.80.146
+  host: ${REDIS_HOST}
   port: 6379
-  password: 3333
+  password: ${REDIS_PW}
 
 jwt:
-  secret-key: c2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtc2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQK
+  secret-key: ${JWT_SECRET}
   access-token-expiration: 300000 # 5m
   refresh-token-expiration: 86400000 # 24h
