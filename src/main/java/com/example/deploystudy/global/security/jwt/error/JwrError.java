@@ -1,4 +1,4 @@
-package com.example.deploystudy.global.security.jwt.exception;
+package com.example.deploystudy.global.security.jwt.error;
 
 
 import com.example.deploystudy.global.exception.CustomError;
