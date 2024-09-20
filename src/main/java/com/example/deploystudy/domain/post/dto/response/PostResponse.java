@@ -1,6 +1,7 @@
 package com.example.deploystudy.domain.post.dto.response;
 
 
+import com.example.deploystudy.domain.user.domain.User;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Setter;
@@ -12,6 +13,6 @@ public class PostResponse {
     private String id;
     private String title;
     private String content;
-    private String author;
+    private User author;
     private Long viewCount;
 }

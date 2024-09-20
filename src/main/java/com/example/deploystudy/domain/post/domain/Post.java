@@ -1,9 +1,11 @@
 package com.example.deploystudy.domain.post.domain;
 
 
+import com.example.deploystudy.domain.user.domain.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,7 +26,8 @@ public class Post {
 
     private String content;
 
-    private String author;
+    @ManyToOne
+    private User author;
 
     @Setter
     private Long viewCount;

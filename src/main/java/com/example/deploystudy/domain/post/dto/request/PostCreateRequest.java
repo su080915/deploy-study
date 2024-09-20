@@ -9,5 +9,4 @@ import lombok.Setter;
 public class PostCreateRequest {
     private String title;
     private String content;
-    private String author;
 }
