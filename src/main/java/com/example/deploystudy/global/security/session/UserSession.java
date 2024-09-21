@@ -15,6 +15,7 @@ public class UserSession {
 
     public User getUser() {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        System.out.println(username);
 
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new CustomException(UserError.USER_NOT_FOUND));

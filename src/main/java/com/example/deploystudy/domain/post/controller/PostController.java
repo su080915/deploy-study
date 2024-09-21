@@ -19,7 +19,7 @@ import java.util.List;
 @Tag(name = "게시글")
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/post")
+@RequestMapping("/posts")
 public class PostController {
     private final PostService postService;
 
@@ -35,6 +35,7 @@ public class PostController {
 
     @PostMapping
     public void createPost(@RequestBody PostCreateRequest request) {
+        System.out.println(request.getTitle());
         postService.createPost(request);
     }
 }
