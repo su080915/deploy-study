@@ -62,6 +62,9 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.PATCH, "/posts/{postId}/check").authenticated()
                         .requestMatchers(HttpMethod.PATCH, "/posts/{postId}").authenticated()
                         .requestMatchers(HttpMethod.DELETE, "/posts/{postId}").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/comment/**").authenticated()
+                        .requestMatchers(HttpMethod.POST, "/comment/**").authenticated()
+                        .requestMatchers(HttpMethod.DELETE, "/comment/**").authenticated()
                 )
 
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)

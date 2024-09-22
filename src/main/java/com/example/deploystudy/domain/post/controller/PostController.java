@@ -3,11 +3,14 @@ package com.example.deploystudy.domain.post.controller;
 
 import com.example.deploystudy.domain.post.domain.Post;
 import com.example.deploystudy.domain.post.dto.request.PostCreateRequest;
+import com.example.deploystudy.domain.post.dto.request.PostUpdateRequest;
 import com.example.deploystudy.domain.post.dto.response.PostResponse;
 import com.example.deploystudy.domain.post.service.PostService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,7 +38,17 @@ public class PostController {
 
     @PostMapping
     public void createPost(@RequestBody PostCreateRequest request) {
-        System.out.println(request.getTitle());
         postService.createPost(request);
     }
+
+    @PatchMapping("/{postId}")
+    public void updatePost(@PathVariable Long postId, @RequestBody PostUpdateRequest request) {
+        postService.updatePost(postId, request);
+    }
+
+    @DeleteMapping("/{postId}")
+    public void deletePost(@PathVariable Long postId) {
+        postService.deletePost(postId);
+    }
+
 }
