@@ -8,6 +8,11 @@ spring:
 #        dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
         transaction.jta.platform: org.hibernate.service.jta.JtaPlatform
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: 6379
+      password: ${REDIS_PW}
 
   datasource:
     url: ${DB_URL} # mysql:3306/?? ??
@@ -26,12 +31,11 @@ springdoc:
     operationsSorter: method
     path: /swagger-ui.html
 
-redis:
-  host: ${REDIS_HOST}
-  port: 6379
-  password: ${REDIS_PW}
-
 jwt:
   secret-key: ${JWT_SECRET}
   access-token-expiration: 300000 # 5m
   refresh-token-expiration: 86400000 # 24h
+
+admin:
+  username: osu
+  password: osu
