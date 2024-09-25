@@ -37,5 +37,5 @@ jwt:
   refresh-token-expiration: 86400000 # 24h
 
 admin:
-  username: osu
-  password: osu
+  username: ${ADMIN_NAME}
+  password: ${ADMIN_PW}
